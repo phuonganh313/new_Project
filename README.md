@@ -1,78 +1,19 @@
-# new_Project
-create a new project
 <?php
 
-
-class Books
+class sapXepMang
 {
-    public $price;
-    public $title;
+    protected $_arrSort;
 
-    /* các hàm thành viên */
-    function __construct($par1, $par2)
+    function __construct(array $arrSort)
     {
-        $this->title = $par1;
-        $this->price = $par2;
+        $this->_arrSort=$arrSort;
     }
 
-    function getPrice()
-    {
-        echo $this->price . "$" . "\n";
-    }
-
-    function getTitle()
-    {
-        echo $this->title . "\n";
+    function sapXep(){
+        $sorted= $this->_arrSort;
+        sort($sorted);
+        return $sorted;
     }
 }
-
-class inherent
-{
-    public $author;
-    public $publisher;
-
-    function __construct($parr1, $parr2)
-    {
-        $this->author = $parr1;
-        $this->publisher = $parr2;
-    }
-    function getAuthor()
-    {
-        echo $this->author . "\n";
-    }
-
-    function getPublisher()
-    {
-        echo $this->publisher . "\n";
-    }
-}
-class NewBooks1 extends Books
-{
-
-}
-class NewBooks2 extends inherent
-{
-
-}
-$english = new NewBooks1('Practive and Grammar', 20);
-$toanCaoCap = new NewBooks1("Toan Cao Cap 1", 15);
-$thuPhatVoTuyen = new NewBooks1("Hệ thống thu và phát vô tuyến", 18);
-
-$tieuThuyet =new NewBooks2("marie","Kim Dong");
-$antena= new NewBooks2("Ts.Dang The Ngoc","Giao Duc");
-$giaitich = new NewBooks2("Ts. Pham Ngoc Anh","Giao Duc");
-
-$thuPhatVoTuyen->getTitle();
-$thuPhatVoTuyen->getPrice();
-$antena->getAuthor();
-$antena->getPublisher();
-
-$toanCaoCap->getTitle();
-$toanCaoCap->getPrice();
-$giaitich->getAuthor();
-$giaitich->getPublisher();
-
-$english->getTitle();
-$english->getPrice();
-$tieuThuyet->getAuthor();
-$tieuThuyet->getPublisher();
+$arrSorted= new sapXepMang(array(1,2,3,4,56,"a"));
+print_r($a
