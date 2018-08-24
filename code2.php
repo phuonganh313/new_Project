@@ -1,3 +1,3 @@
 <?php
 
-echo "code2';
+echo "code2 (edited)';
